@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Golden Falcon Transport Ltd. | Step-Deck & Freight, Airdrie, Alberta</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F8FB;--surface:#fff;--ink:#14202E;--muted:#55616F;--line:#DDE3EA;--gold:#C48A12;--gold-d:#9A6A06;--navy:#14202E;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#F6F8FB}}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:"Barlow Condensed",Impact,sans-serif;line-height:1.02;margin:0;letter-spacing:.005em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand img{height:46px;width:auto;display:block;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25))}
+nav{display:flex;gap:26px;align-items:center}
+nav a{text-decoration:none;font-weight:600;font-size:15px}
+nav a:hover{color:var(--gold-d)}
+.btn{display:inline-block;background:var(--gold);color:#1b1100;font-weight:600;text-decoration:none;padding:13px 24px;border-radius:6px;border:0;font:600 16px Barlow,sans-serif;cursor:pointer;transition:background .2s}
+.btn:hover{background:#d89a1c}
+.btn.ghost{background:transparent;border:2px solid var(--navy);color:var(--navy);padding:11px 22px}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+nav .btn{padding:9px 18px}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:44px;height:44px;font-size:22px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:600px;overflow:hidden;background:#dfe7f0}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s}
+.slide.on{opacity:1;visibility:visible}
+.slide .scene,.slide .photo{position:absolute;inset:0;width:100%;height:100%}
+.slide .photo{background-size:cover;background-position:center;opacity:0;transition:opacity .6s}
+.slide .photo.ok{opacity:1}
+.slide.on .scene{animation:drift 9s ease-out both}
+@keyframes drift{from{transform:scale(1.06)}to{transform:scale(1)}}
+.scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.68) 42%,rgba(255,255,255,.08) 78%),linear-gradient(0deg,rgba(246,248,251,.9),transparent 30%)}
+.copy{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:80px;padding-bottom:150px;max-width:680px}
+.copy .tag{font-weight:600;color:var(--gold-d);font-size:16px;margin-bottom:14px}
+.copy h1{font-size:clamp(52px,9.5vw,112px);font-weight:800;color:var(--navy)}
+.copy p{font-size:clamp(17px,2vw,20px);color:#2c3a49;max-width:520px;margin:20px 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Golden Falcon brand mark on each hero slide */
+.hero-logo{position:absolute;z-index:3;right:5.5%;bottom:12%;width:clamp(190px,22vw,340px);max-height:38%;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 5px 12px rgba(0,0,0,.28));pointer-events:none}
+/* hero slide indicators */
+.slide-dots{position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;justify-content:center;align-items:center;gap:11px;pointer-events:none}
+.slide-dot{pointer-events:auto;width:11px;height:11px;padding:0;border:1px solid rgba(20,32,46,.65);border-radius:50%;background:rgba(255,255,255,.78);cursor:pointer;transition:transform .2s,background .2s,border-color .2s;box-shadow:0 1px 5px rgba(0,0,0,.18)}
+.slide-dot[aria-current="true"]{background:var(--gold);border-color:var(--gold-d);transform:scale(1.25)}
+.slide-dot:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+/* sections */
+section{padding:96px 0}
+.sec-h{font-size:clamp(40px,6vw,68px);font-weight:700;margin-bottom:14px}
+.lead{color:var(--muted);max-width:600px;margin:0 0 44px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:30px 26px}
+.card svg{width:48px;height:48px;color:var(--gold-d);margin-bottom:18px}
+.card h3{font-size:30px;margin-bottom:10px}
+.card p{margin:0;color:var(--muted)}
+.fleet{background:var(--surface);border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.fleet-art{border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:#dfe7f0}
+.fleet-art img{width:100%;height:100%;display:block;object-fit:cover}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 28px;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:6px 16px;font-weight:600;font-size:15px}
+.about ul{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.about li{padding-left:26px;position:relative;font-weight:600}
+.about li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:8px;border-left:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(-45deg) translateY(-3px)}
+.quote{background:var(--navy);color:#fff}
+.quote .sec-h{color:#fff}
+.quote .lead{color:#b9c4d0}
+.qgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+.addr p{margin:4px 0;color:#c9d3de}
+.addr strong{font-size:20px}
+form{background:#fff;color:var(--ink);border-radius:12px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:flex;flex-direction:column;font-weight:600;font-size:14px;gap:6px}
+label.full{grid-column:1/-1}
+input,textarea{font:400 16px Barlow,sans-serif;padding:12px 13px;border:1px solid #c5ced8;border-radius:6px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:110px;resize:vertical}
+form .btn{grid-column:1/-1}
+.note{grid-column:1/-1;font-size:13px;color:var(--muted);margin:0}
+footer{padding:30px 0;background:#0e1824;color:#9eacba;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+footer img{height:40px}
+
+@media (max-width:860px){
+  .burger{display:block}
+  nav{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:8px 22px 18px;border-bottom:1px solid var(--line);display:none}
+  nav.open{display:flex}
+  nav a{padding:13px 0;border-bottom:1px solid var(--line)}
+  nav .btn{margin-top:12px;text-align:center}
+  .hero{height:100svh;min-height:680px}
+  .scrim{background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.82) 48%,rgba(255,255,255,.3) 100%)}
+  .copy{justify-content:flex-start;padding-top:clamp(92px,15vh,138px);padding-bottom:105px;max-width:100%}
+  .copy .tag{font-size:14px;line-height:1.35;margin-bottom:12px}
+  .copy h1{font-size:clamp(46px,10vw,76px);max-width:620px;overflow-wrap:normal}
+  .copy p{font-size:17px;line-height:1.5;margin:14px 0 20px;max-width:560px}
+  .hero-logo{right:5%;bottom:10%;width:clamp(135px,27vw,205px);max-height:25%}
+  .slide-dots{bottom:calc(25px + env(safe-area-inset-bottom,0px))}
+  section{padding:68px 0}
+  .cards,.split,.qgrid{grid-template-columns:1fr}
+  .split,.qgrid{gap:32px}
+  .about ul{grid-template-columns:1fr}
+  form{grid-template-columns:1fr;padding:20px}
+}
+@media (max-width:420px){.hero-logo{right:5%;bottom:9%;width:125px;max-height:20%}.btn{width:100%;text-align:center}.cta{flex-direction:column;gap:9px}.copy{padding-top:100px}.copy h1{font-size:clamp(42px,11vw,58px)}.copy p{font-size:16px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slide,.slide .photo{transition:none}.slide.on .scene{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="rig" viewBox="0 0 600 150">
+      <g fill="#14202E">
+        <rect x="20" y="62" width="150" height="30" rx="2"/><rect x="170" y="48" width="140" height="44" rx="2"/>
+        <rect x="170" y="48" width="140" height="6" fill="#C48A12"/>
+        <path d="M312 92V40h56l30 26v26z"/><rect x="318" y="46" width="40" height="22" fill="#9db4cc"/>
+        <rect x="400" y="30" width="6" height="40"/>
+        <rect x="14" y="92" width="394" height="14"/>
+        <g fill="#0b121b"><circle cx="70" cy="112" r="17"/><circle cx="108" cy="112" r="17"/><circle cx="250" cy="112" r="17"/><circle cx="288" cy="112" r="17"/><circle cx="360" cy="112" r="17"/></g>
+        <g fill="#C48A12"><circle cx="70" cy="112" r="6"/><circle cx="108" cy="112" r="6"/><circle cx="250" cy="112" r="6"/><circle cx="288" cy="112" r="6"/><circle cx="360" cy="112" r="6"/></g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Golden Falcon Transport Ltd."><img src="logo.png" alt="Golden Falcon Transport Ltd."></a>
+    <button class="burger" aria-label="Menu" aria-expanded="false" id="burger">☰</button>
+    <nav id="nav">
+      <a href="#services">Services</a><a href="#fleet">Our Fleet</a><a href="#about">About</a><a href="#quote">Contact</a>
+      <a class="btn" href="#quote">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero" id="hero" aria-roledescription="carousel" aria-label="Golden Falcon services">
+
+  <!-- Slide 1: step-deck -->
+  <div class="slide on" id="s0">
+    <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><linearGradient id="g0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9cc3e6"/><stop offset=".55" stop-color="#fbe3b0"/><stop offset="1" stop-color="#f2c978"/></linearGradient></defs>
+      <rect width="1600" height="900" fill="url(#g0)"/>
+      <circle cx="1180" cy="470" r="90" fill="#fff3d0" opacity=".9"/>
+      <path d="M0 560 L220 400 L380 500 L620 330 L880 520 L1120 380 L1400 520 L1600 430 V620 H0z" fill="#8fa8c2" opacity=".75"/>
+      <path d="M0 610 L260 500 L520 590 L800 480 L1100 600 L1360 520 L1600 590 V680 H0z" fill="#6f8aa6"/>
+      <rect y="640" width="1600" height="260" fill="#d9a54a"/><rect y="700" width="1600" height="200" fill="#38424e"/>
+      <g stroke="#f7ecd0" stroke-width="6" stroke-dasharray="70 60"><path d="M0 800H1600"/></g>
+      <use href="#rig" x="860" y="600" width="620" height="155"/>
+    </svg>
+    <div class="photo" data-i="0"></div>
+    <div class="scrim"></div>
+    <img class="hero-logo" src="logo.png" alt="Golden Falcon Transport Ltd. logo">
+    <div class="wrap copy"><div class="tag">Airdrie, Alberta · Western Canada &amp; cross-border</div>
+      <h1>Driven to Deliver.</h1>
+      <p>Professional step-deck transportation, equipment hauling and dependable freight service. Built for the road. Focused on your load.</p>
+      <div class="cta"><a class="btn" href="#quote">Request a Freight Quote</a><a class="btn ghost" href="#services">Explore Our Services</a></div></div>
+  </div>
+
+  <!-- Slide 2: equipment -->
+  <div class="slide" id="s1">
+    <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb0dc"/><stop offset="1" stop-color="#dcebf7"/></linearGradient></defs>
+      <rect width="1600" height="900" fill="url(#g1)"/>
+      <g fill="#fff" opacity=".85"><ellipse cx="300" cy="160" rx="150" ry="34"/><ellipse cx="1100" cy="110" rx="190" ry="40"/><ellipse cx="1420" cy="230" rx="120" ry="28"/></g>
+      <rect y="600" width="1600" height="300" fill="#a9b6a0"/>
+      <g fill="#C48A12"><rect x="1010" y="500" width="210" height="48"/><rect x="1060" y="450" width="90" height="52"/><rect x="1180" y="400" width="14" height="110" transform="rotate(30 1187 455)"/><circle cx="1050" cy="560" r="34" fill="#14202E"/><circle cx="1180" cy="560" r="34" fill="#14202E"/></g>
+      <rect y="690" width="1600" height="210" fill="#38424e"/>
+      <g stroke="#f7ecd0" stroke-width="6" stroke-dasharray="70 60"><path d="M0 790H1600"/></g>
+      <use href="#rig" x="840" y="590" width="620" height="155"/>
+      <rect x="1010" y="610" width="200" height="50" fill="#C48A12" rx="3"/><rect x="1050" y="570" width="80" height="44" fill="#C48A12"/>
+    </svg>
+    <div class="photo" data-i="1"></div>
+    <div class="scrim"></div>
+    <img class="hero-logo" src="logo.png" alt="Golden Falcon Transport Ltd. logo">
+    <div class="wrap copy"><div class="tag">Construction · Industrial · Agricultural</div>
+      <h1>Heavy Equipment, Hauled Right.</h1>
+      <p>Transportation for machinery that needs specialized loading and securement, subject to dimensions and load requirements.</p>
+      <div class="cta"><a class="btn" href="#quote">Discuss Your Load</a><a class="btn ghost" href="#fleet">See Our Fleet</a></div></div>
+  </div>
+
+  <!-- Slide 3: freight -->
+  <div class="slide" id="s2">
+    <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f86b5"/><stop offset=".6" stop-color="#f0c8a0"/><stop offset="1" stop-color="#f4a868"/></linearGradient></defs>
+      <rect width="1600" height="900" fill="url(#g2)"/>
+      <path d="M0 640 C300 560 500 620 800 570 S1300 540 1600 600 V900 H0z" fill="#b89a5a"/>
+      <path d="M0 690 C400 640 800 700 1600 650 V900 H0z" fill="#8c7a45"/>
+      <path d="M-100 900 L760 640 L840 640 L1900 900z" fill="#38424e"/>
+      <path d="M800 645 L800 900" stroke="#f7ecd0" stroke-width="6" stroke-dasharray="40 40"/>
+      <use href="#rig" x="520" y="650" width="520" height="130"/>
+    </svg>
+    <div class="photo" data-i="2"></div>
+    <div class="scrim"></div>
+    <img class="hero-logo" src="logo.png" alt="Golden Falcon Transport Ltd. logo">
+    <div class="wrap copy"><div class="tag">Western Canada · Cross-border freight</div>
+      <h1>Built for the Long Haul.</h1>
+      <p>Shipment coordination and road transport for businesses that want clear communication and consistent service.</p>
+      <div class="cta"><a class="btn" href="#quote">Get a Quote</a><a class="btn ghost" href="#about">Who We Are</a></div></div>
+  </div>
+
+  <div class="slide-dots" role="group" aria-label="Hero slide navigation">
+    <button class="slide-dot" type="button" aria-label="Show slide 1" aria-current="true" data-go="0"></button>
+    <button class="slide-dot" type="button" aria-label="Show slide 2" aria-current="false" data-go="1"></button>
+    <button class="slide-dot" type="button" aria-label="Show slide 3" aria-current="false" data-go="2"></button>
+  </div>
+</div>
+
+<section id="services"><div class="wrap">
+  <h2 class="sec-h">Transportation Services</h2>
+  <p class="lead">Freight requirements vary. We build practical transport solutions around the needs of each shipment.</p>
+  <div class="cards">
+    <article class="card"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M3 30h14v-8h28v8M3 30v6h42v-6"/><circle cx="12" cy="39" r="3"/><circle cx="36" cy="39" r="3"/></svg><h3>Step-Deck Transport</h3><p>Lower-deck trailer solutions for taller freight, machinery and equipment that call for specialized loading and securement.</p></article>
+    <article class="card"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M6 34h24V22H18l-4-8H8zM30 28l12-14M42 14l-4 10"/><circle cx="12" cy="38" r="3"/><circle cx="26" cy="38" r="3"/></svg><h3>Equipment Hauling</h3><p>Transportation options for construction, industrial and agricultural equipment, subject to dimensions and load requirements.</p></article>
+    <article class="card"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17h34m-6-6 6 6-6 6M42 31H8m6-6-6 6 6 6"/></svg><h3>Freight Transportation</h3><p>Shipment coordination and road transport for businesses looking for clear communication and consistent service.</p></article>
+  </div>
+</div></section>
+
+<section class="fleet" id="fleet"><div class="wrap split">
+  <div class="fleet-art"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=85" alt="Heavy-duty transport truck on the road" loading="lazy"></div>
+  <div>
+    <h2 class="sec-h">Our Fleet</h2>
+    <p class="lead" style="margin-bottom:0">Built around the workhorse equipment that keeps freight moving. From modern sleeper tractors to step-deck configurations, our approach starts with matching the equipment to the shipment.</p>
+    <ul class="chips"><li>Step-deck</li><li>Heavy equipment</li><li>Freight</li></ul>
+    <a class="btn" href="#quote">Discuss Your Load</a>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap split">
+  <div><h2 class="sec-h">Freight with a clear direction.</h2>
+    <p class="lead" style="margin:0">Moving freight is about more than getting from point A to point B. It takes planning, attention to detail and communication.</p></div>
+  <div>
+    <p style="margin-top:0">Golden Falcon Transport Ltd. is a trucking business based in Airdrie, Alberta. We make shipping straightforward by understanding the load, the route and the timing before the wheels turn.</p>
+    <p>Whether you're arranging a step-deck shipment or discussing a specialized load, send us the details and we'll review the requirements.</p>
+    <ul><li>Load-focused planning</li><li>Equipment-minded service</li><li>Clear communication</li><li>Quote-based enquiries</li></ul>
+  </div>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap qgrid">
+  <div><h2 class="sec-h">Request a Freight Quote.</h2>
+    <p class="lead">Tell us what you're shipping, where it's going and when you need it moved. We'll review your request and discuss the next steps.</p>
+    <div class="addr"><strong>Golden Falcon Transport Ltd.</strong><p>Airdrie, Alberta, Canada</p><p>Direct phone number and business email: to be added before launch.</p></div></div>
+  <form id="qf">
+    <label>Your name *<input name="name" required autocomplete="name" placeholder="Your name"></label>
+    <label>Company<input name="company" autocomplete="organization" placeholder="Company name"></label>
+    <label>Email *<input name="email" type="email" required autocomplete="email" placeholder="name@company.com"></label>
+    <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="Phone number"></label>
+    <label>Pickup location *<input name="pickup" required placeholder="City / province / state"></label>
+    <label>Delivery location *<input name="drop" required placeholder="City / province / state"></label>
+    <label class="full">Freight details *<textarea name="details" required placeholder="Type of freight, dimensions, approximate weight, timing"></textarea></label>
+    <button class="btn" type="submit">Prepare Quote Email</button>
+    <p class="note">This demonstration form prepares an email in your device's email app. It does not send or store requests on the website. A business email address and a real form service must be configured before launch.</p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <img src="logo.png" alt="Golden Falcon Transport Ltd.">
+  <span>Airdrie, Alberta, Canada · Professional step-deck &amp; freight transportation</span>
+  <span>© Golden Falcon Transport Ltd. All rights reserved.</span>
+</div></footer>
+
+<script>
+// Optional: paste real photo URLs here (one per slide). Falls back to the illustrated scene if empty or blocked.
+var PHOTOS=[
+  'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2200&q=88',
+  'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2200&q=88',
+  'https://images.unsplash.com/photo-1720127601642-7c3a7ba88f5f?auto=format&fit=crop&w=2200&q=88'
+];
+var QUOTE_EMAIL=''; // add the business email before launch
+
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),
+      dots=[].slice.call(document.querySelectorAll('.slide-dot')),
+      hero=document.getElementById('hero'),cur=0,t;
+  slides.forEach(function(s,i){
+    var p=s.querySelector('.photo');
+    if(PHOTOS[i]){var im=new Image();im.onload=function(){p.style.backgroundImage='url("'+PHOTOS[i]+'")';p.classList.add('ok')};im.src=PHOTOS[i];}
+  });
+  function go(n){
+    cur=(n+slides.length)%slides.length;
+    slides.forEach(function(s,i){s.classList.toggle('on',i===cur)});
+    dots.forEach(function(b,i){b.setAttribute('aria-current',i===cur?'true':'false')});
+    clearTimeout(t);
+    if(!matchMedia('(prefers-reduced-motion:reduce)').matches)t=setTimeout(function(){go(cur+1)},6000);
+  }
+  dots.forEach(function(b){b.addEventListener('click',function(){go(+b.dataset.go)})});
+  var x0=null;
+  hero.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  hero.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(cur+(d<0?1:-1));x0=null});
+  go(0);
+
+  var nav=document.getElementById('nav'),bg=document.getElementById('burger');
+  bg.onclick=function(){var o=nav.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');bg.setAttribute('aria-expanded',false)}});
+
+  document.getElementById('qf').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target,v=function(n){return f.elements[n].value.trim()};
+    var body='Name: '+v('name')+'\nCompany: '+v('company')+'\nEmail: '+v('email')+'\nPhone: '+v('phone')+'\nPickup: '+v('pickup')+'\nDelivery: '+v('drop')+'\n\nFreight details:\n'+v('details');
+    location.href='mailto:'+QUOTE_EMAIL+'?subject='+encodeURIComponent('Freight quote request')+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
