@@ -111,6 +111,27 @@ footer img{height:40px}
 }
 @media (max-width:420px){.hero-logo{right:5%;bottom:9%;width:125px;max-height:20%}.btn{width:100%;text-align:center}.cta{flex-direction:column;gap:9px}.copy{padding-top:100px}.copy h1{font-size:clamp(42px,11vw,58px)}.copy p{font-size:16px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.slide,.slide .photo{transition:none}.slide.on .scene{animation:none}}
+
+/* oversized freight feature */
+.oversize{background:#eef2f6;border-block:1px solid var(--line)}
+.oversize .split{grid-template-columns:1.05fr 1fr}
+.oversize-art{border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#dfe7f0;border:1px solid var(--line)}
+.oversize-art img{width:100%;height:100%;object-fit:cover;display:block}
+.oversize-points{padding-left:20px;margin:18px 0 26px;color:var(--muted)}
+.oversize-points li{margin:7px 0}
+@media(max-width:860px){.oversize .split{grid-template-columns:1fr}}
+
+
+/* leadership team */
+.team{background:var(--surface);border-block:1px solid var(--line)}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.member{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:28px 26px;border-top:4px solid var(--gold)}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font:700 26px "Barlow Condensed",sans-serif;letter-spacing:.04em;margin-bottom:18px}
+.member h3{font-size:30px;margin-bottom:4px}
+.member .role{margin:0;color:var(--muted);font-weight:500}
+.member .tel{display:block;margin-top:14px;font-weight:600;color:var(--gold-d);text-decoration:none}
+.member .tel:empty{display:none}
+@media(max-width:860px){.team-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -135,7 +156,7 @@ footer img{height:40px}
     <a class="brand" href="#top" aria-label="Golden Falcon Transport Ltd."><img src="logo.png" alt="Golden Falcon Transport Ltd."></a>
     <button class="burger" aria-label="Menu" aria-expanded="false" id="burger">☰</button>
     <nav id="nav">
-      <a href="#services">Services</a><a href="#fleet">Our Fleet</a><a href="#about">About</a><a href="#quote">Contact</a>
+      <a href="#services">Services</a><a href="#fleet">Our Fleet</a><a href="our-work.html">Our Work</a><a href="#about">About</a><a href="#team">Our Team</a><a href="#quote">Contact</a>
       <a class="btn" href="#quote">Request a Quote</a>
     </nav>
   </div>
@@ -224,6 +245,26 @@ footer img{height:40px}
   </div>
 </div></section>
 
+
+<section class="oversize" id="oversized-freight"><div class="wrap split">
+  <div class="oversize-art">
+    <img src="https://images.unsplash.com/photo-1660866838833-610077d8ef77?auto=format&fit=crop&w=1600&q=85" alt="Heavy truck transporting a large industrial load on a winter road" loading="lazy">
+  </div>
+  <div>
+    <div class="tag" style="font-weight:600;color:var(--gold-d);margin-bottom:12px">Specialized freight · Route-specific planning</div>
+    <h2 class="sec-h">Oversized Freight. Planned for the Road Ahead.</h2>
+    <p class="lead" style="margin-bottom:18px">Moving an oversized load takes more than a truck and trailer. Every move starts with understanding the freight, checking the route and identifying the requirements before transport is arranged.</p>
+    <p>Tell us what needs to move and where it needs to go. We’ll review the shipment details and discuss the practical next steps for your move.</p>
+    <ul class="oversize-points">
+      <li>Load dimensions and approximate weight</li>
+      <li>Pickup and delivery locations</li>
+      <li>Preferred transport dates and timing</li>
+      <li>Photos or drawings of the freight, if available</li>
+    </ul>
+    <a class="btn" href="#quote">Request an Oversized Freight Assessment</a>
+  </div>
+</div></section>
+
 <section class="fleet" id="fleet"><div class="wrap split">
   <div class="fleet-art"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=85" alt="Heavy-duty transport truck on the road" loading="lazy"></div>
   <div>
@@ -241,6 +282,16 @@ footer img{height:40px}
     <p style="margin-top:0">Golden Falcon Transport Ltd. is a trucking business based in Airdrie, Alberta. We make shipping straightforward by understanding the load, the route and the timing before the wheels turn.</p>
     <p>Whether you're arranging a step-deck shipment or discussing a specialized load, send us the details and we'll review the requirements.</p>
     <ul><li>Load-focused planning</li><li>Equipment-minded service</li><li>Clear communication</li><li>Quote-based enquiries</li></ul>
+  </div>
+</div></section>
+
+<section class="team" id="team"><div class="wrap">
+  <h2 class="sec-h">Our Leadership Team</h2>
+  <p class="lead">The people behind every move at Golden Falcon Transport Ltd.</p>
+  <div class="team-grid">
+    <article class="member"><div class="avatar" aria-hidden="true">SG</div><h3>Satinder Gill</h3><p class="role">Managing Director</p><a class="tel" href=""></a></article>
+    <article class="member"><div class="avatar" aria-hidden="true">CR</div><h3>Chantelle Redl</h3><p class="role">Director of Operations</p><a class="tel" href=""></a></article>
+    <article class="member"><div class="avatar" aria-hidden="true">H</div><h3>Harry</h3><p class="role">Safety &amp; Compliance Manager</p><a class="tel" href=""></a></article>
   </div>
 </div></section>
 
